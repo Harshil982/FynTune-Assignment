@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Questrial&family=Roboto:wght@500&display=swap');
+.shoplist-navbar
+{
+    display: flex;
+    justify-content: space-between;
+    margin: 1vw 8vw 1vw 2vw;
+    font-family: 'Questrial', sans-serif;
+}
+body
+{
+    font-family: 'Questrial', sans-serif;
+}
+.logo
+{
+    width: 16vw;
+}
+.nav-menus
+{
+    display: flex;
+    width: 50vw;
+    justify-content: space-between;
+    margin-top: 1.5vw;
+    font-size: 1.1vw;
+}
+.nav-menus a
+{
+    text-decoration: none;
+    color: black;
+}

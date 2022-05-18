@@ -1,0 +1,79 @@
+.shop-adding-form
+{
+    width: 25vw;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1vw 4vw 3vw 4vw;
+    /* border: 1px solid salmon; */
+    border-radius: 2vw;
+    background: linear-gradient(45deg,salmon,violet);
+    /* background-color: violet; */
+    color: black;
+}
+.shop-adding-form h2
+{
+    font-size: 2vw;
+    text-align: center;
+    color: white;
+}
+.shop-adding-form button
+{
+    width: 100%;
+    padding: 1vw;
+    border-radius: 1vw;
+    border: 1px solid white;
+    font-size: 1.1vw;
+    font-weight: 700;
+    background: transparent;
+    transition: all 500ms;
+}
+.shop-adding-form button:hover
+{
+    background-color: dodgerblue;
+    color: white;
+    cursor: pointer;
+}
+.shop-adding-form label
+{
+    font-size: 1.1vw;
+    color: white;
+}
+.shop-adding-form input
+{
+    padding: 10px;
+    width: 94%;
+    margin-top: 9px;
+    border: none;
+    border-bottom: 1px solid black;
+    background: transparent;
+    color: white;
+    padding-left: 0px;
+    font-size: 1vw;
+}
+.shop-adding-form input:focus
+{
+    outline: none;
+}
+.shop-adding-form input::placeholder
+{
+    color: white;
+}
+.css-b62m3t-container
+{
+    margin-top: 9px;
+    background: transparent;
+}
+.shop-adding-form select
+{
+    width: 100%;
+    border: none;
+    padding: 10px;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    border-radius: 5px;
+    padding-right: 10px;
+}
+.shop-adding-form select:focus
+{
+    outline: none;
+}

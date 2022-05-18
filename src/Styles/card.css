@@ -1,0 +1,23 @@
+.shop-card
+{
+    margin-top: 1.3vw;
+    margin-bottom: 1.3vw;
+    display: flex;
+    flex-direction: row;
+}
+.shop-img img
+{
+    width: 27vw;
+    height: 17vw;
+}
+.shop-desc
+{
+    margin-left: 12vw;
+}
+.shop-name
+{
+    font-size: 1.8vw;
+    font-weight: 900;
+    margin-top: 1vw;
+    word-spacing: 5px;
+}
