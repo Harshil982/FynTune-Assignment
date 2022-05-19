@@ -11,3 +11,29 @@
     margin-right: auto;
     border-radius: 20px;
 }
+.filters
+{
+    display: flex;
+    align-items: center;
+}
+.filters p
+{
+    width: 8vw;
+}
+.filters .option
+{
+    margin-right: 3vw;
+    width: 17vw;
+}
+/* .shop-filter h1
+{
+    margin-bottom: 5px;
+} */
+.no-shop-avail
+{
+    display: none;
+}
+.no-shop-avail:last-child
+{
+    display: block;
+}

@@ -15,7 +15,8 @@ function AddShop(props) {
         area: '',
         category: '',
         openDate: '',
-        closeDate: ''
+        closeDate: '',
+        isOpen : ''
     })
     // console.log(shopDetails);
     const sel = (e) => {

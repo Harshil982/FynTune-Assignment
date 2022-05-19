@@ -21,3 +21,27 @@
     margin-top: 1vw;
     word-spacing: 5px;
 }
+.status-open
+{
+    background-color: rgba(0, 128, 0, 0.210);
+    width: 5vw;
+    text-align: center;
+    padding: 10px;
+    font-size: 1vw;
+    border-radius: 12px;
+    color: green;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+.status-closed
+{
+    background-color: rgba(255, 0, 0, 0.18);
+    width: 5vw;
+    text-align: center;
+    padding: 10px;
+    font-size: 1vw;
+    border-radius: 12px;
+    color: rgb(128, 0, 0);
+    font-weight: 900;
+    letter-spacing: 2px;
+}

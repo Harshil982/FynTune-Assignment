@@ -13,7 +13,7 @@ function Navbar(props) {
                 <Link to={{ pathname: "/" }} >Home</Link>
                 <Link to={{ pathname: "/addshop" }} >Add Shops</Link>
                 <Link to={{ pathname: "/addshop" }} >Categories</Link>
-                <Link to={{ pathname: "/addshop" }} >Area</Link>
+                <Link to={{ pathname: "/addshop" }} >Delete Shop</Link>
             </div>
         </div>
     );
