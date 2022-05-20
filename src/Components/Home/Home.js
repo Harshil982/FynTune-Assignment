@@ -17,6 +17,7 @@ function Home(props) {
             { value: 'Area', label: 'Area' },
             { value: 'Category', label: 'Category' },
             { value: 'Open/Close', label: 'open/Close' },
+            { value: '', label: 'none' },
         ];
     let CategoryOptions = []
     if (filtertype === 'Area') {
@@ -44,8 +45,8 @@ function Home(props) {
     else if (filtertype === 'Open/Close') {
         CategoryOptions =
             [
-                { value: 'Open', label: 'open' },
-                { value: 'Close', label: 'Close' },
+                { value: true, label: 'open' },
+                { value: false, label: 'Close' },
             ]
     }
     const sel = (e) => {
@@ -67,6 +68,15 @@ function Home(props) {
         else if(filtertype === 'Category')
         {
             const filtered = myState.shopData.filter((sh) => sh.category === filterCategory);
+            return(
+                filtered.length === 0 ? <h1>No shop Available</h1> : filtered.map((shop,index) => (
+                    <Card data={shop} />
+                ))
+            )
+        }
+        else if(filtertype === 'Open/Close')
+        {
+            const filtered = myState.shopData.filter((sh) => sh.isOpen === filterCategory);
             return(
                 filtered.length === 0 ? <h1>No shop Available</h1> : filtered.map((shop,index) => (
                     <Card data={shop} />

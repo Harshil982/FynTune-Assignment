@@ -16,7 +16,7 @@ function AddShop(props) {
         category: '',
         openDate: '',
         closeDate: '',
-        isOpen : ''
+        isOpen: true
     })
     // console.log(shopDetails);
     const sel = (e) => {
@@ -24,6 +24,24 @@ function AddShop(props) {
     }
     const selectCategory = (e) => {
         setShopDetails({ ...shopDetails, category: e.value })
+    }
+    const handleCloseDate = (e) => {
+        setShopDetails({ ...shopDetails, closeDate: e.target.value })
+    }
+    const setIsOpen = () => {
+        const date = new Date()
+        const today = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate()
+
+        const [year1, month1, day1] = shopDetails.openDate.split("-")
+        const [year2, month2, day2] = shopDetails.closeDate.split("-")
+        const [year3, month3, day3] = today.split("-")
+
+        const newOpenDate = new Date(year1, month1 - 1, day1);
+        const newCloseDate = new Date(year2, month2 - 1, day2);
+        const todayDate = new Date(year3, month3 - 1, day3);
+
+        const condition = todayDate > newOpenDate && todayDate < newCloseDate ? true : false;
+        setShopDetails({...shopDetails,isOpen : condition})
     }
     const AreaOptions =
         [
@@ -43,9 +61,6 @@ function AddShop(props) {
             { value: 'Chemist', label: 'Chemist' },
             { value: 'Stationery shop', label: 'Stationery shop' },
         ]
-    const regex = new RegExp("/^[A-Za-z]+$/")
-    const isValid = regex.test("abgfd")
-    console.log(isValid);
     const handleSubmit = (e) => {
         e.preventDefault();
         if (shopDetails.area === '') {
@@ -57,6 +72,7 @@ function AddShop(props) {
             return false
         }
         console.log(shopDetails);
+        setShopDetails({ ...shopDetails, isOpen: true })
         dispatch(addShop(shopDetails))
         setShopDetails({
             shopName: '',
@@ -69,9 +85,6 @@ function AddShop(props) {
     const shop = "harshil"
     return (
         <div className="addshop-form">
-            {/* <input type="text" onChange={(e) => setShop(e.target.value)} required />
-            <button onClick={() => dispatch(addShop({name : "harshil",place : "malpur"}))} >Add Shop</button>
-            <button onClick={() => dispatch(removeShop("shrevalli"))} >DELETE</button> */}
             <form className="shop-adding-form" onSubmit={handleSubmit} >
                 <h2>Add Your Shop</h2>
                 <input type="text" id="shopName" value={shopDetails.shopName} required placeholder="Enter Shop Name here" onChange={(e) => setShopDetails({ ...shopDetails, shopName: e.target.value })} autoComplete="off" /><br /><br />
@@ -95,9 +108,8 @@ function AddShop(props) {
                 <input type="date" value={shopDetails.openDate} required onChange={(e) => setShopDetails({ ...shopDetails, openDate: e.target.value })} /><br /><br />
                 {/* {opendate ? <h1>{opendate}</h1> : null} */}
                 <label>Closing Date :</label><br />
-                <input type="date" value={shopDetails.closeDate} min={shopDetails.openDate} required onChange={(e) => setShopDetails({ ...shopDetails, closeDate: e.target.value })} disabled={shopDetails.openDate ? false : true} /><br /><br />
-
-                <button type="submit">Submit</button>
+                <input type="date" value={shopDetails.closeDate} min={shopDetails.openDate} required onChange={handleCloseDate} disabled={shopDetails.openDate ? false : true} /><br /><br />
+                <button type="submit" onClick={setIsOpen} >Submit</button>
             </form>
             <button onClick={() => dispatch(removeShop(shop))} >Delete</button>
         </div>
