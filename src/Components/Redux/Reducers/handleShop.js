@@ -11,7 +11,7 @@ const handleShop = (state = initialState, action) =>{
                 shopData: [...state.shopData,action.payLoad]
             }
         case "REMOVESHOP":
-            const temp = state.shopData.filter((val) => val.shopName!==action.payLoad)
+            const temp = state.shopData.filter((val) => val.id!==action.payLoad)
             return{
                 ...state,
                 shopData : temp

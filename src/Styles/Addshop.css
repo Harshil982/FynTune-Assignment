@@ -6,7 +6,7 @@
     padding: 1vw 4vw 3vw 4vw;
     /* border: 1px solid salmon; */
     border-radius: 2vw;
-    background: linear-gradient(45deg,salmon,violet);
+    background: linear-gradient(45deg,rgba(250, 128, 114),violet);
     /* background-color: violet; */
     color: black;
 }
@@ -42,7 +42,7 @@
 {
     padding: 10px;
     width: 94%;
-    margin-top: 9px;
+    /* margin-top: 9px; */
     border: none;
     border-bottom: 1px solid black;
     background: transparent;
@@ -76,4 +76,42 @@
 .shop-adding-form select:focus
 {
     outline: none;
+}
+@media only screen and (max-width : 768px) {
+    .shop-adding-form
+    {
+        width: 32vw;
+    }
+    .shop-adding-form input
+    {
+        font-size: 1.5vw;
+    }
+    .shop-adding-form label
+    {
+        font-size: 1.9vw;
+    }
+}
+@media only screen and (max-width : 600px) {
+    .shop-adding-form
+    {
+        margin-top: 5vw;
+        width: 61vw;
+    }
+    .shop-adding-form h2
+    {
+        font-size: 4vw;
+    }
+    .shop-adding-form input
+    {
+        font-size: 2.7vw;
+    }
+    .shop-adding-form label
+    {
+        font-size: 3vw;
+    }
+    .shop-adding-form button
+    {
+        padding: 2vw;
+        font-size: 3vw;
+    }
 }

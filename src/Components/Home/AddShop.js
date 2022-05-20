@@ -3,7 +3,7 @@ import Select from 'react-select'
 import './../../Styles/Addshop.css'
 // import Fade from 'react-reveal/Fade'
 import { useDispatch } from 'react-redux'
-import { addShop, removeShop } from './../Redux/Actions/index'
+import { addShop } from './../Redux/Actions/index'
 
 function AddShop(props) {
     // const myState = useSelector((state) => state.handleShop)
@@ -11,6 +11,7 @@ function AddShop(props) {
     // console.log(myState.shopData);
     // console.log(shop);
     const [shopDetails, setShopDetails] = useState({
+        id : '',
         shopName: '',
         area: '',
         category: '',
@@ -30,6 +31,7 @@ function AddShop(props) {
     }
     const setIsOpen = () => {
         const date = new Date()
+        const setId = Date.now()
         const today = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate()
 
         const [year1, month1, day1] = shopDetails.openDate.split("-")
@@ -42,6 +44,7 @@ function AddShop(props) {
 
         const condition = todayDate > newOpenDate && todayDate < newCloseDate ? true : false;
         setShopDetails({...shopDetails,isOpen : condition})
+        setShopDetails({...shopDetails,id : setId})
     }
     const AreaOptions =
         [
@@ -72,8 +75,8 @@ function AddShop(props) {
             return false
         }
         console.log(shopDetails);
-        setShopDetails({ ...shopDetails, isOpen: true })
         dispatch(addShop(shopDetails))
+        alert(`Shop With Name "${shopDetails.shopName}" is added`)
         setShopDetails({
             shopName: '',
             area: '',
@@ -82,7 +85,6 @@ function AddShop(props) {
             closeDate: ''
         })
     }
-    const shop = "harshil"
     return (
         <div className="addshop-form">
             <form className="shop-adding-form" onSubmit={handleSubmit} >
@@ -111,7 +113,6 @@ function AddShop(props) {
                 <input type="date" value={shopDetails.closeDate} min={shopDetails.openDate} required onChange={handleCloseDate} disabled={shopDetails.openDate ? false : true} /><br /><br />
                 <button type="submit" onClick={setIsOpen} >Submit</button>
             </form>
-            <button onClick={() => dispatch(removeShop(shop))} >Delete</button>
         </div>
     );
 }

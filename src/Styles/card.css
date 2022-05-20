@@ -9,10 +9,15 @@
 {
     width: 27vw;
     height: 17vw;
+    border-radius: 2vw;
 }
 .shop-desc
 {
     margin-left: 12vw;
+}
+.shop-desc p
+{
+    font-size: 1.1vw;
 }
 .shop-name
 {
@@ -28,7 +33,7 @@
     text-align: center;
     padding: 10px;
     font-size: 1vw;
-    border-radius: 12px;
+    border-radius: 1vw;
     color: green;
     font-weight: 900;
     letter-spacing: 2px;
@@ -40,8 +45,68 @@
     text-align: center;
     padding: 10px;
     font-size: 1vw;
-    border-radius: 12px;
+    border-radius: 1vw;
     color: rgb(128, 0, 0);
     font-weight: 900;
     letter-spacing: 2px;
+}
+.delete-btn
+{
+    padding: 10px;
+    font-size: 15px;
+    background-color: rgba(255, 0, 0, 0.14);
+    border: 2px solid red;
+    border-radius: 12px;
+    color: red;
+    font-weight: 200;
+}
+.delete-btn:hover
+{
+    cursor: pointer;
+}
+@media only screen and (max-width : 600px)
+{
+    .shop-img img
+    {
+        width: 32vw;
+        height: 22vw;
+        border-radius: 2vw;
+    }
+    .shop-name
+    {
+        font-size: 2.4vw;
+    }
+    .shop-desc p
+    {
+        font-size: 1.4vw;
+    }    
+    .status-open
+    {
+        font-size: 2vw;
+    }
+}
+@media only screen and (max-width : 430px)
+{
+    .shop-img img
+    {
+        width: 35vw;
+        height: 25vw;
+        border-radius: 2vw;
+    }
+    .shop-name
+    {
+        font-size: 3vw;
+    }
+    .shop-desc p
+    {
+        font-size: 2vw;
+    }   
+    .status-open
+    {
+        width: 7vw;
+    }
+    .status-closed
+    {
+        width: 7vw;
+    } 
 }

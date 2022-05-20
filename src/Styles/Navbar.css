@@ -26,4 +26,26 @@ body
 {
     text-decoration: none;
     color: black;
+    font-size: 1.2vw;
+}
+@media only screen and (max-width : 768px)
+{
+    .logo
+    {
+        width: 21vw;
+    }
+    .nav-menus a
+    {
+        font-size: 1.7vw;
+    }
+}
+@media only screen and (max-width : 600px) {
+    .shoplist-navbar
+    {
+        margin-top: 2vw;
+    }
+    .nav-menus a
+    {
+        font-size: 2vw;
+    }
 }

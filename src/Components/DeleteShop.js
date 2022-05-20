@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux'
-import './../../Styles/Home.css'
+import './../Styles/Home.css'
 import Fade from 'react-reveal/Fade'
-import Card from './Card';
 import Select from 'react-select'
 import { Link } from 'react-router-dom';
+import DeleteShopCard from './DeleteShopCard';
 
-function Home(props) {
+function DeleteShop(props) {
     const myState = useSelector((state) => state.handleShop)
     const [filtertype, setfiltertype] = useState('')
     const [filterCategory, setfilterCategory] = useState('')
@@ -61,7 +61,7 @@ function Home(props) {
             const filtered = myState.shopData.filter((sh) => sh.area === filterCategory);
             return(
                 filtered.length === 0 ? <h1>No shop Available</h1> : filtered.map((shop,index) => (
-                    <Card data={shop} />
+                    <DeleteShopCard data={shop} />
                 ))
             )
         }
@@ -70,7 +70,7 @@ function Home(props) {
             const filtered = myState.shopData.filter((sh) => sh.category === filterCategory);
             return(
                 filtered.length === 0 ? <h1>No shop Available</h1> : filtered.map((shop,index) => (
-                    <Card data={shop} />
+                    <DeleteShopCard data={shop} />
                 ))
             )
         }
@@ -79,7 +79,7 @@ function Home(props) {
             const filtered = myState.shopData.filter((sh) => sh.isOpen === filterCategory);
             return(
                 filtered.length === 0 ? <h1>No shop Available</h1> : filtered.map((shop,index) => (
-                    <Card data={shop} />
+                    <DeleteShopCard data={shop} />
                 ))
             )
         }
@@ -87,7 +87,7 @@ function Home(props) {
         {
             return(
             myState.shopData.map((shop,index) => (
-                <Card data={shop} />
+                <DeleteShopCard data={shop} />
             )))
         }
     }
@@ -104,14 +104,14 @@ function Home(props) {
                         onChange={sel}
                         options={AreaOptions}
                         isDisabled = {myState.shopData.length === 0 ? true : false}
-                        placeholder="Filter Type"
+                        placeholder="Select Filter Type"
                     /></div>
                 <div className="option">
                     <Select
                         defaultValue={filterCategory}
                         onChange={selectCategory}
                         options={CategoryOptions}
-                        placeholder="Filter Value"
+                        placeholder="Select Filter Value"
                         isDisabled={filtertype ? false : true}
                     /></div>
             </div>
@@ -121,7 +121,7 @@ function Home(props) {
                     {myState.shopData.length === 0
                         ?
                         <div>
-                            <h2 className="no-store">No Stores Currently</h2>
+                            <h2>No Stores Currently</h2>
                             <Link to="addshop" >Add Your Shop</Link>
                         </div>
                         :
@@ -133,4 +133,4 @@ function Home(props) {
     );
 }
 
-export default Home;
+export default DeleteShop;
